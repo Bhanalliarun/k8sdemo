@@ -28,7 +28,7 @@ node {
     }
  
     stage("Deploy app in k8s cluster"){
-        sh "kubectl apply -f deployment.yml"
+        sh "kubectl apply -f deployment.yml;kubectl rollout restart deploy deployment"
     }
 }    
 
